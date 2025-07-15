@@ -14,3 +14,4 @@ pipelines:
                 - exec:
                     command: cat
                     arguments: [README.md]
+                    working_dir: my_repo 
