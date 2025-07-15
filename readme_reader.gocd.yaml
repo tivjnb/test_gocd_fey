@@ -16,4 +16,4 @@ pipelines:
                     command: powershell
                     arguments:
                       - "-Command"
-                      - "Get-Content .\\repo\\README.md -Encoding UTF8 | Out-Host"
+                      - "Get-Content README.md | Out-Host"
