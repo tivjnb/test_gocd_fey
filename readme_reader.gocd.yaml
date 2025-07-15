@@ -11,11 +11,11 @@ pipelines:
           jobs:
             read_readme:
               tasks:
-                  - exec1:
-                    command: bash
-                    arguments: 
-                      - "-c"
-                      - "ls -laR"  # Рекурсивный вывод файлов
+                - exec1:
+                  command: bash
+                  arguments:
+                    - "-c"
+                    - "ls -laR"  # Рекурсивный вывод файлов
                 - exec2:
                     command: cat
                     arguments: [README.md]
