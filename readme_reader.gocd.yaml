@@ -1,19 +1,19 @@
-format_version: 10
+format_version: 9
+
 pipelines:
-  readme_reader:
-    group: defaultGroup
+  readme-display:
+    group: default_group
     materials:
-      my_repo:
-        git: https://github.com/gocd/gocd-vault-secret-plugin
-        branch: master
+      repo:
+        git: https://github.com/gocd/gocd-vault-secret-plugin # Здесь укажите URL вашего git-репозитория
+        branch: master                        # Укажите нужную ветку
     stages:
-      - read_stage:
+      - readme_stage:
           jobs:
-            read_readme:
+            readme_job:
               tasks:
                 - exec:
-                    command: "powershell"
+                    command: powershell
                     arguments:
                       - "-Command"
-                      - "Get-Content (Join-Path $env:GO_PIPELINE_NAME 'my_repo/README.md') -Encoding UTF8"
-                  run_if: passed
+                      - "Get-Content README.md | Out-Host"
