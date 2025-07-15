@@ -1,0 +1,16 @@
+format_version: 10
+pipelines:
+  readme_reader:
+    group: example_group
+    materials:
+      my_repo:
+        git: https://github.com/gocd/gocd-vault-secret-plugin
+        branch: master
+    stages:
+      - read_stage:
+          jobs:
+            read_readme:
+              tasks:
+                - exec:
+                    command: cat
+                    arguments: [README.md]
