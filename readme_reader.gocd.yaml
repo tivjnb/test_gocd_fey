@@ -12,11 +12,8 @@ pipelines:
             read_readme:
               tasks:
                 - exec:
-                    command: bash
-                    arguments:
-                      - "-c"
-                      - "ls -laR"  # Рекурсивный вывод файлов
-                - exec:
-                    command: cat
-                    arguments: [README.md]
-                    working_dir: my_repo 
+                    command: cmd
+                    arguments: 
+                      - "/c"
+                      - "type my_repo\README.md"  # Windows-версия `cat`
+                  run_if: passed
