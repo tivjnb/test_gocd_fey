@@ -2,7 +2,7 @@ format_version: 9
 
 pipelines:
   readme-display:
-    group: default_group
+    group: defaultGroup
     materials:
       repo:
         git: https://github.com/gocd/gocd-vault-secret-plugin # Здесь укажите URL вашего git-репозитория
