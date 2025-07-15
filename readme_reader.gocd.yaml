@@ -12,8 +12,8 @@ pipelines:
             read_readme:
               tasks:
                 - exec:
-                    command: cmd
+                    command: "cmd"
                     arguments: 
                       - "/c"
-                      - "type my_repo\README.md"  # Windows-версия `cat`
+                      - "type my_repo\\README.md"
                   run_if: passed
