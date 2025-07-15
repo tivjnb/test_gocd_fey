@@ -12,8 +12,8 @@ pipelines:
             read_readme:
               tasks:
                 - exec:
-                    command: "cmd"
-                    arguments: 
-                      - "/c"
-                      - "type my_repo\\README.md"
+                    command: "powershell"
+                    arguments:
+                      - "-Command"
+                      - "Get-Content (Join-Path $env:GO_PIPELINE_NAME 'my_repo/README.md') -Encoding UTF8"
                   run_if: passed
